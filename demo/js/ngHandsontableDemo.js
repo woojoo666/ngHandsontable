@@ -65,21 +65,21 @@ angular.module('ngHandsontableDemo', ['ngHandsontable'])
 			{data: 'isActive', type: 'checkbox', title: 'Is active', checkedTemplate: 'Yes', uncheckedTemplate: 'No', width:65}
 		];
 
-		setInterval(function () {
-			if( $scope.db.dynamicColumns[0].title == 'ID') {
-				$scope.db.dynamicColumns[3].readOnly = true;
-				$scope.db.dynamicColumns.shift();
-				$scope.afterChange = function () {
-//							console.log('afterChange: ','when ID column has been removed');
-				};
+		function shuffle(ar) {
+			var shuffled = [];
+			while(ar.length>0)
+				shuffled.push(ar.splice(Math.floor(Math.random()*ar.length),1)[0]);
+			return shuffled;
+		}
 
-			} else {
-				$scope.db.dynamicColumns[2].readOnly = false;
-				$scope.db.dynamicColumns.unshift({data: 'id', title: 'ID'});
-				$scope.afterChange = function () {
-//							console.log('afterChange: ','when ID column has been added');
-				};
-			}
+		function setColumns(cols, newCols) {
+			if (cols.length) cols.pop();
+			cols.push.apply(cols, newCols);
+		}
+
+		setInterval(function () {
+			var cols = $scope.db.dynamicColumns;
+			setColumns(cols, shuffle(cols));
 			$scope.$apply();
 		}, 3000);
 	});
