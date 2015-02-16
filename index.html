@@ -1,16 +1,8 @@
 <!doctype html>
-<html ng-app="ngHandsontableDemo">
+<html>
 
-<head>
-    <link rel="stylesheet" media="screen" href="bower_components/handsontable/dist/handsontable.full.css">
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/handsontable/dist/handsontable.full.js"></script>
-    <script src="dist/ngHandsontable.js"></script>
-    <script src="demo/js/ngHandsontableDemo.js"></script>
-
-</head>
-
-<body class="home" ng-controller="DemoCtrl">
+<body>
+	<div ng-app='ngHandsontableDemo', ng-controller='DemoCtrl as info'>
 
     <hot-table settings="{colHeaders: colHeaders, contextMenu: ['row_above', 'row_below', 'remove_row'], afterChange: afterChange }" rowHeaders="false" minSpareRows="minSpareRows" datarows="db.items" height="300" width="700">
         <hot-column data="id" title="'ID'"></hot-column>
@@ -23,6 +15,12 @@
         <hot-column data="price" title="'Price'" type="'numeric'" width="80" format="'$ 0,0.00'"></hot-column>
         <hot-column data="isActive" title="'Is active'" type="'checkbox'" width="65" checkedTemplate="'Yes'" uncheckedTemplate="'No'"></hot-column>
     </hot-table>
+
+    <link rel="stylesheet" media="screen" href="bower_components/handsontable/dist/handsontable.full.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/handsontable/dist/handsontable.full.js"></script>
+    <script src="dist/ngHandsontable.js"></script>
+    <script src="demo/js/ngHandsontableDemo.js"></script>
 
 </body>
 
