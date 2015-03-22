@@ -24,7 +24,7 @@ angular.module('ngHandsontableDemo', ['ngHandsontable'])
 		var lastNames = ["Tired", "Johnson", "Moore", "Rocket", "Goodman", "Farewell", "Manson", "Bentley", "Kowalski", "Schmidt", "Tucker", "Fancy"];
 		var address = ["Turkey", "Japan", "Michigan", "Russia", "Greece", "France", "USA", "Germany", "Sweden", "Denmark", "Poland", "Belgium"];
 
-		$scope.minSpareRows = 1;
+		$scope.minSpareRows = 0;
 		$scope.colHeaders = true;
 
 		$scope.db = {};
@@ -77,9 +77,7 @@ angular.module('ngHandsontableDemo', ['ngHandsontable'])
 		function replaceArray(orig, newAr) {orig.splice.apply(orig, [0,orig.length].concat(newAr));}
 
 		setInterval(function () {
-			var cols = $scope.db.dynamicColumns;
-			var shuffled = shuffle(cols);
-			replaceArray(cols,shuffled);
+			$scope.db.items = shuffle($scope.db.items);
 			$scope.$apply();
 		}, 3000);
 	});
