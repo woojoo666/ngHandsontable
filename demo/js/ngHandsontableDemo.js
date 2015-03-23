@@ -78,6 +78,7 @@ angular.module('ngHandsontableDemo', ['ngHandsontable'])
 
 		setInterval(function () {
 			$scope.db.items = shuffle($scope.db.items);
+			$scope.db.dynamicColumns = shuffle($scope.db.dynamicColumns);
 			$scope.$apply();
 		}, 3000);
 	});
