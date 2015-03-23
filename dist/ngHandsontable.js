@@ -5,6 +5,10 @@
  * Licensed under the MIT license.
  * https://github.com/handsontable/ngHandsontable
  * Date: Tue Jan 20 2015 14:51:24 GMT+0100 (CET)
+ *
+ * Modified by woojoo666
+ * https://github.com/woojoo666/ngHandsontable
+ * Date: Sun Mar 22 2015 23:53:40 GMT+0800 (PST)
 */
 
 if (document.all && !document.addEventListener) { // IE 8 and lower
