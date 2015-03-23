@@ -1,3 +1,9 @@
+###Downloaded and modified from commit [`aa2eed7ade...`](https://github.com/handsontable/ngHandsontable/commit/aa2eed7ade218d9b10d72cfa0c0e2f151db490db) of [ngHandsontable](https://github.com/handsontable/ngHandsontable)
+
+`ngHandsontable.js` changed to support reassigning `datarows`, for which it will recreate the entire table. `index.html` and `ngHandsontableDemo.js` modified to isolate the "dynamic columns" example, and shuffles the rows to demo `datarow` reassignment.
+
+---------------------------------------------------------------------------
+
 # ngHandsontable - the AngularJS directive for [Handsontable](https://github.com/handsontable/jquery-handsontable)
 
 Enables creation of data grid applications in AngularJS.
