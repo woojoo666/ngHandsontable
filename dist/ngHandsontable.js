@@ -248,6 +248,10 @@ angular.module('ngHandsontable.directives', [])
 						}
 					);
 
+					scope.$watch('columns', function(newValue) {
+						scope.htSettings.columns = newValue;
+						settingFactory.updateHandsontableSettings(scope.hotInstance, scope.htSettings);
+					});
 
 					/***
 					 * Check if data has been changed
